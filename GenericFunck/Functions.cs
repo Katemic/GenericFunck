@@ -15,10 +15,6 @@ namespace GenericFunck
 
             foreach (var item in list )
             {
-                //if (largest == null) 
-                //{
-                //    largest = item;
-                //}
                 if (largest < item) 
                 {
                     largest = item;
@@ -27,5 +23,12 @@ namespace GenericFunck
 
             return largest;
         }
+
+        public static int FindLargestCompare(List<int> list)
+        {
+            list.Sort();
+            return list[list.Count-1];
+        }
+
     }
 }
