@@ -9,22 +9,22 @@ namespace GenericFunck
     public class Functions
     {
 
-        //public static T FindLargest<T>(List<T> list)
-        //{
-        //    T largest = list[0];
-        //    if (list[0] is string)
-        //    {
-        //        foreach (var item in list)
-        //        {
-        //            if ((string)largest.Length < (string)item.Length)
-        //            {
-        //                largest = item;
-        //            }
-        //        }
+        public static T FindLargest<T>(List<T> list) where T : IComparable<T>
+        {
+            T largest = list[0];
 
-        //        return largest;
-        //    }
-        //}
+
+            foreach (var item in list)
+            {
+                if (largest.CompareTo(item) < 0) 
+                {
+                    largest = item;
+                }
+            }
+
+            return largest;
+
+        }
 
         public static T FindLargestCompare<T>(List<T> list)
         {
